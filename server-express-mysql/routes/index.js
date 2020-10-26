@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/*
+/* hbs test
 router.get('/products', function(req, res, next) {
   models.products.findAll({}).then(productsFound => {
     res.render('products', {
@@ -23,5 +23,31 @@ router.get("/products", function(req, res, next) {
   models.products.findAll().then(products => res.json(products));
 });
 
+router.post("/products", function(req, res, next) {
+  let newProduct = new models.Product();
+  newProduct.name = req.body.name;
+  newProduct.price = req.body.price;
+  newProduct.save().then(product => res.json(product));
+});
+
+router.delete("/products/:id", function(req, res, next) {
+  let productId = parseInt(req.params.id);
+  models.Product.findByPk(productId)
+    .then(product => product.destroy())
+    .then(() => res.send({ productId }))
+    .catch(err => res.status(400).send(err));
+});
+
+router.put("/:id", function(req, res, next) {
+  models.Product.update(
+    {
+      name: req.body.name,
+      complete: req.body.complete
+    },
+    {
+      where: { id: parseInt(req.params.id) }
+    }
+  ).then(product => res.json(product));
+});
 
 module.exports = router;
