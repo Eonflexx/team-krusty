@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     products_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true  // <--- Add this property/value
     },
     name: {
       type: DataTypes.STRING(45),

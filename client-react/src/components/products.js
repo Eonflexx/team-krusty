@@ -26,7 +26,7 @@ class Products extends React.Component {
       this.fetchProductData();
       // empty the input
       this.productName.current.value = "";
-      this.productPrice.current.value = 0.00;
+      this.productPrice.current.value = "";
 
     });
   };
@@ -45,7 +45,7 @@ class Products extends React.Component {
       <div>
         <h3>List of products (React, added this code)</h3>
         <input type="text" placeholder="New Product" ref={this.productName} />
-        <input type="number" placeholder="Given Price" ref={this.productPrice} />
+        <input type="text" placeholder="Given Price" ref={this.productPrice} />
         <button type="button" className="btn btn-primary" onClick={this.addProduct}>add</button>
         {products}
       </div>);
