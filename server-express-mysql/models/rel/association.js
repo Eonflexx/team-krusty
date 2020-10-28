@@ -1,4 +1,5 @@
 /* table not built -----> order_products
+
 module.exports = function(models) {
     models.product.belongsToMany(models.order, 
         { 
@@ -11,5 +12,8 @@ module.exports = function(models) {
             foreignKey: 'order_id'
         });
 }
+
+
+
 
 */

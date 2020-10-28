@@ -8,6 +8,7 @@ class Products extends React.Component {
     this.state = { productData: [] };
     this.productName = React.createRef();
     this.productPrice = React.createRef();
+    this.updateId = products.key
   }
 
   fetchProductData = () => {
@@ -31,14 +32,38 @@ class Products extends React.Component {
     });
   };
 
+  updateProduct = () => {
+    let url = `http://localhost:3001/products/${product.products_id}`;
+    return axios.post(url, { name: this.productName.current.value, price: this.productPrice.current.value }).then(response => {
+      // refresh the data
+      this.fetchProductData();
+      // empty the input
+      this.productName.current.value = "";
+      this.productPrice.current.value = "";
+
+    });
+  };
+
+  deleteProduct = () => {
+    let url = "http://localhost:3001/products";
+    return axios.delete((url), productName).then(response => {
+      // refresh the data
+      this.fetchProductData();
+      // empty the input
+      this.productName.current.value = "";
+      this.productPrice.current.value = "";
+
+    });
+  };
+
   render() {
     console.log(this.state.productData);
     if (this.state.productData.length === 0) {
       return <div>Failed to fetch data from server</div>;
     }
     const products = this.state.productData.map(product => (
-      <div key={product.name}>
-        <em>{product.name}</em>: ${product.price} <button type="button" className="btn btn-danger">Delete</button>
+      <div key={product.products_id}>
+        <em>{product.name}</em>: ${product.price} <button ref={this.updateId} type="button" className="btn btn-success" onClick={this.props.updateProduct()}>Update</button><button type="button" className="btn btn-danger" onClick={this.props.deleteProduct()}>Delete</button>
       </div>
     ));
     return (
