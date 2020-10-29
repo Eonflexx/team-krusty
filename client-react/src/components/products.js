@@ -1,5 +1,4 @@
 import React from 'react';
-
 import axios from 'axios';
 
 class Products extends React.Component {
@@ -8,7 +7,6 @@ class Products extends React.Component {
     this.state = { productData: [] };
     this.productName = React.createRef();
     this.productPrice = React.createRef();
-    this.updateId = products.key
   }
 
   fetchProductData = () => {
@@ -28,31 +26,31 @@ class Products extends React.Component {
       // empty the input
       this.productName.current.value = "";
       this.productPrice.current.value = "";
-
     });
   };
 
-  updateProduct = () => {
-    let url = `http://localhost:3001/products/${product.products_id}`;
-    return axios.post(url, { name: this.productName.current.value, price: this.productPrice.current.value }).then(response => {
+  updateProduct = event => {
+    let id = event.target.value;
+    console.log(id)
+    let encodedURI = window.encodeURI(this.props.uri + '/' + id);
+    return axios.put(encodedURI, { 
+        name: this.productName.current.value, 
+        price: this.productPrice.current.value 
+    }).then(response => {
       // refresh the data
       this.fetchProductData();
       // empty the input
       this.productName.current.value = "";
       this.productPrice.current.value = "";
-
     });
   };
 
-  deleteProduct = () => {
-    let url = "http://localhost:3001/products";
-    return axios.delete((url), productName).then(response => {
+
+  deleteProduct = (id) => {
+    let encodedURI = window.encodeURI(this.props.uri + '/' + id) ;
+    return axios.delete(encodedURI).then(response => {
       // refresh the data
       this.fetchProductData();
-      // empty the input
-      this.productName.current.value = "";
-      this.productPrice.current.value = "";
-
     });
   };
 
@@ -62,8 +60,8 @@ class Products extends React.Component {
       return <div>Failed to fetch data from server</div>;
     }
     const products = this.state.productData.map(product => (
-      <div key={product.products_id}>
-        <em>{product.name}</em>: ${product.price} <button ref={this.updateId} type="button" className="btn btn-success" onClick={this.props.updateProduct()}>Update</button><button type="button" className="btn btn-danger" onClick={this.props.deleteProduct()}>Delete</button>
+      <div key={product.name} value={product}>
+        <em>{product.name}</em>: ${product.price} 
       </div>
     ));
     return (
@@ -78,3 +76,25 @@ class Products extends React.Component {
 }
 
 export default Products;
+
+/*
+  updateProduct = (id) => {
+    let url = `http://localhost:3001/products/${id}`;
+    return axios.post(url, { name: this.productName.current.value, price: this.productPrice.current.value }).then(response => {
+      // refresh the data
+      this.fetchProductData();
+      // empty the input
+      this.productName.current.value = "";
+      this.productPrice.current.value = "";
+    });
+  };
+
+  deleteProduct = (id) => {
+    let url = `http://localhost:3001/products${id}`;
+    return axios.delete((url)).then(response => {
+      // refresh the data
+      this.fetchProductData();
+    });
+  };
+*/
+
