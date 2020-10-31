@@ -6,7 +6,7 @@ const mysql = require("mysql2");
 router.get("/", function (req, res, next) {
   models.products
     .findAll({
-      attributes: ["name", "price", "image"],
+      attributes: ["id", "name", "price", "image", "description"],
     })
     .then((productsFound) => {
       res.setHeader("Content-Type", "application/json");
@@ -25,8 +25,10 @@ router.post("/", function (req, res, next) {
   models.products
     .findOrCreate({
       where: {
+        id: req.body.id,
         name: req.body.name,
         price: req.body.price,
+        description: req.body.description
       },
     })
     .spread(function (newProduct, created) {
@@ -45,8 +47,8 @@ router.post("/", function (req, res, next) {
 router.put("/:id", function (req, res, next) {
   let productId = parseInt(req.params.id);
   models.products
-    .update(req.body, { where: { products_id: productId } })
-    .then((result) => res.redirect("/products/" + productId))
+    .update(req.body, { where: { id: productId } })
+    .then((result) => res.redirect("/products/" + id))
     .catch((err) => {
       res.status(400);
       res.send("There was a problem updating the products.  Please check the product information.");
@@ -54,11 +56,11 @@ router.put("/:id", function (req, res, next) {
     });
 });
 
-router.delete("/products/:id", function (req, res, next) {
+router.delete("/delete/:id", function (req, res, next) {
   let productId = parseInt(req.params.id);
   models.products
     .destroy({
-      where: { products_id: productId },
+      where: { id: productId },
     })
     .then((result) => res.redirect("/products"))
     .catch((err) => {
@@ -68,24 +70,3 @@ router.delete("/products/:id", function (req, res, next) {
 });
 
 module.exports = router;
-
-
-
-/*
-router.put('/:id', function (req, res, next) {
-  let productId = parseInt(req.params.id);
-  models.products.update(req.body, { 
-    where: { products_id: productId } 
-  })
-  .then(result => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(result));
-  })
-  .catch(err => {
-    res.status(400);
-    res.send(err.message);
-    res.send('There was a problem updating the product.  Please check the product information.');
-    console.log('There was a problem updating the product.  Please check the product information.');
-  });
-});
-*/

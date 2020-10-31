@@ -29,11 +29,10 @@ class Products extends React.Component {
     });
   };
 
-  updateProduct = event => {
-    let id = event.target.value;
+  updateProduct = (id) => {
     console.log(id)
-    let encodedURI = window.encodeURI(this.props.uri + '/' + id);
-    return axios.put(encodedURI, { 
+    let encodedURI = window.encodeURI(this.props.uri);
+    return axios.put(encodedURI + `/${id}`, { 
         name: this.productName.current.value, 
         price: this.productPrice.current.value 
     }).then(response => {
@@ -47,8 +46,9 @@ class Products extends React.Component {
 
 
   deleteProduct = (id) => {
-    let encodedURI = window.encodeURI(this.props.uri + '/' + id) ;
-    return axios.delete(encodedURI).then(response => {
+    let encodedURI = window.encodeURI(this.props.uri);
+    console.log(id)
+    return axios.delete(encodedURI + `/delete/${id}`).then(response => {
       // refresh the data
       this.fetchProductData();
     });
@@ -60,8 +60,10 @@ class Products extends React.Component {
       return <div>Failed to fetch data from server</div>;
     }
     const products = this.state.productData.map(product => (
-      <div key={product.name} value={product}>
+      <div key={product.id} value={product.id}>
         <em>{product.name}</em>: ${product.price} 
+        <button type="button" className="btn btn-success" onClick={() => {this.updateProduct(product.id)}}>update</button>
+        <button type="button" className="btn btn-danger" onClick={() => {this.deleteProduct(product.id)}}>Delete</button>
       </div>
     ));
     return (

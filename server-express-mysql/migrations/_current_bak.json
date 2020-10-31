@@ -91,9 +91,9 @@
                     "field": "price",
                     "seqType": "Sequelize.DECIMAL"
                 },
-                "product_image": {
+                "image": {
                     "allowNull": true,
-                    "field": "product_image",
+                    "field": "image",
                     "seqType": "Sequelize.STRING(255)"
                 },
                 "store_id": {
@@ -306,5 +306,5 @@
             "indexes": []
         }
     },
-    "revision": 1
+    "revision": 2
 }
