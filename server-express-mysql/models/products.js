@@ -2,55 +2,43 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('products', {
-    products_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true  // <--- Add this property/value
+    },
+    name: {
+      type: DataTypes.STRING(45),
+      allowNull: true
+    },
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: true
+    },
+    image: {
+      type: DataTypes.STRING(255),
+      allowNull: true
     },
     store_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'store',
-        key: 'store_id'
-      },
-      unique: true
+      allowNull: true
     },
     category_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'categories',
-        key: 'category_id'
-      }
+      allowNull: true
     },
     sub_category_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'sub_categories',
-        key: 'sub_category_id'
-      }
-    },
-    product_name: {
-      type: DataTypes.STRING(45),
-      allowNull: false
+      allowNull: true
     },
     description: {
       type: DataTypes.STRING(45),
-      allowNull: false
-    },
-    list_price: {
-      type: DataTypes.DECIMAL,
-      allowNull: false
-    },
-    product_ipath: {
-      type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: true
     },
     stock_quantity: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     }
   }, {
     tableName: 'products'

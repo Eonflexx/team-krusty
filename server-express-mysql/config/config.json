@@ -3,8 +3,10 @@
     "username": "root",
     "password": "Password1",
     "database": "krusty_one",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false,
+    "define": { "timestamps" : false }
   },
   "test": {
     "username": "root",
