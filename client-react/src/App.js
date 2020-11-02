@@ -9,6 +9,7 @@ import Home from "./Screens/Home";
 import About from "./Screens/About";
 import Shop from "./Screens/Shop";
 
+import ItemDetail from "./components/ItemDetail";
 import Products from "./components/products";
 import PersonList from "./components/Person/PersonList";
 import PersonInput from "./components/Person/PersonInput";
@@ -23,7 +24,8 @@ class App extends Component {
           <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/shop" component={Shop} />
+          <Route exact path="/shop" component={Shop} />
+          <Route path="/shop/:id" component={ItemDetail} />
           </Switch>
         </div>
       </Router>
