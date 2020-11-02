@@ -26,10 +26,10 @@ class App extends Component {
           <Route path="/about" component={About} />
           <Route exact path="/shop" component={Shop} />
           <Route path="/shop/:id" component={ItemDetail} />
-          <ProductReview path="/Reviews" uri="http://localhost:3001/products" />
+          <ProductReview path="/reviews" uri="http://localhost:3001/products" />
           <Products path="/products" uri="http://localhost:3001/products" />
+          <PersonList path="/users" />
           <PersonInput />
-          <PersonList />
           </Switch>
         </div>
       </Router>
