@@ -9,11 +9,13 @@ import Home from "./Screens/Home";
 import About from "./Screens/About";
 import Shop from "./Screens/Shop";
 
-import ItemDetail from "./components/ItemDetail";
-import Products from "./components/products";
+import ItemDetail from "./components/Product/ItemDetail";
+import Products from "./components/Product/products";
+import ProductReview from "./components/Product/ProductReview";
 import PersonList from "./components/Person/PersonList";
 import PersonInput from "./components/Person/PersonInput";
-import ProductReview from "./components/ProductReview";
+import PersonUpdate from "./components/Person/PersonUpdate";
+import PersonDelete from "./components/Person/PersonDelete";
 
 class App extends Component {
   render() {
@@ -30,6 +32,8 @@ class App extends Component {
           <Products path="/products" uri="http://localhost:3001/products" />
           <PersonList path="/users" />
           <PersonInput />
+          <PersonUpdate />
+          <PersonDelete />
           </Switch>
         </div>
       </Router>
