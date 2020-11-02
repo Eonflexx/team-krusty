@@ -26,25 +26,16 @@ class App extends Component {
           <Route path="/about" component={About} />
           <Route exact path="/shop" component={Shop} />
           <Route path="/shop/:id" component={ItemDetail} />
+          <ProductReview path="/Reviews" uri="http://localhost:3001/products" />
+          <Products path="/products" uri="http://localhost:3001/products" />
+          <PersonInput />
+          <PersonList />
           </Switch>
         </div>
       </Router>
     );
   }
 }
-/*
-  render() {
-    return (
-      <div className="App">
-        <ProductReview uri="http://localhost:3001/products" />
-        <PersonInput />
-        <PersonList />
-        <Products uri="http://localhost:3001/products" />
-      </div>
-    );
-  }
-}
 
-*/
 
 export default App;

@@ -14,13 +14,13 @@ function About({ match }) {
         <ul className="Topic-links">
           <li><Link to={`${match.url}/Noble`}>Lead Back-End product Routing Implementer . . .</Link></li>
           <li><Link to={`${match.url}/Azzam`}>Lead CSS design and Bootstrap Implementer . . .</Link></li>
-          <li><Link to={`${match.url}/Muhammad`}>Lead Database Migration Implementer . . .</Link></li>
+          <li><Link to={`${match.url}/James`}>Lead Database Migration Implementer . . .</Link></li>
           <li><Link to={`${match.url}/Muhammad`}>Lead Front-End page routing Implementer . . .</Link></li>
           <li><Link to={`${match.url}/Hannah`}>Lead ERM Database Model Implementer . . .</Link></li>
         </ul>
 
         <Route path={`${match.url}/:topicId`} component={Topic} />
-        <Route exact path={match.url} render={() => <h3>Please select a team member!</h3>} />
+        <Route exact path={match.url} render={() => <h3>Please select a link to see a team member!</h3>} />
       </div>
     </div>
   );
