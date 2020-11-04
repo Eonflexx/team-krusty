@@ -20,15 +20,15 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    store_id: {
+    storeid: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    category_id: {
+    category: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    sub_category_id: {
+    subcategoryid: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(45),
       allowNull: true
     },
-    stock_quantity: {
+    stockquantity: {
       type: DataTypes.INTEGER,
       allowNull: true
     }

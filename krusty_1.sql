@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.20, for macos10.15 (x86_64)
 --
 -- Host: localhost    Database: krusty_one
 -- ------------------------------------------------------
--- Server version	8.0.19
+-- Server version	8.0.20
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -60,15 +60,15 @@ CREATE TABLE `products` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `price` decimal(4,2) DEFAULT NULL,
-  `store_id` int DEFAULT NULL,
-  `category_id` int DEFAULT NULL,
-  `sub_category_id` int DEFAULT NULL,
+  `storeid` int DEFAULT NULL,
+  `category` int DEFAULT NULL,
+  `subcategoryid` int DEFAULT NULL,
   `description` varchar(45) DEFAULT NULL,
-  `stock_quantity` int DEFAULT NULL,
+  `stockquantity` int DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `products_id_UNIQUE` (`id`),
-  KEY `products_category_idx` (`category_id`)
+  KEY `products_category_idx` (`category`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -78,7 +78,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (5,'Milk',5.00,NULL,NULL,NULL,NULL,NULL,NULL),(6,'Eggs',3.00,NULL,NULL,NULL,NULL,NULL,NULL),(7,'Bread',4.00,NULL,NULL,NULL,NULL,NULL,NULL),(8,'Cheese',2.00,NULL,NULL,NULL,NULL,NULL,NULL),(9,'Wine',8.00,NULL,NULL,NULL,NULL,NULL,NULL),(10,'Lettuce',1.00,NULL,NULL,NULL,NULL,NULL,NULL),(11,'Carrots',6.00,NULL,NULL,NULL,NULL,NULL,NULL),(18,'Cookies',5.00,NULL,NULL,NULL,NULL,NULL,NULL),(19,'Pumkin ',20.00,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `products` VALUES (5,'Milk',5.00,NULL,NULL,NULL,NULL,NULL,'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT0cQ_Dd7aMTlTlXkN1CJ0XMRxqW9LLHKwGtDPyxIos3eGvAaH-7D-hYMsGh-IQ7EfpPKKPucY&usqp=CAc'),(6,'Eggs',3.00,NULL,NULL,NULL,NULL,NULL,NULL),(7,'Bread',4.00,NULL,NULL,NULL,NULL,NULL,NULL),(8,'Cheese',2.00,NULL,NULL,NULL,NULL,NULL,NULL),(9,'Wine',8.00,NULL,NULL,NULL,NULL,NULL,NULL),(10,'Lettuce',1.00,NULL,NULL,NULL,NULL,NULL,NULL),(11,'Carrots',6.00,NULL,NULL,NULL,NULL,NULL,NULL),(18,'Cookies',5.00,NULL,NULL,NULL,NULL,NULL,NULL),(19,'Pumkin ',20.00,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +90,7 @@ DROP TABLE IF EXISTS `sequelizemeta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sequelizemeta` (
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`name`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -207,4 +207,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-30 17:56:59
+-- Dump completed on 2020-11-03 21:18:44

@@ -58,16 +58,6 @@
                     "allowNull": true,
                     "field": "to_country",
                     "seqType": "Sequelize.STRING(45)"
-                },
-                "createdAt": {
-                    "allowNull": false,
-                    "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "updatedAt": {
-                    "allowNull": false,
-                    "field": "updatedAt",
-                    "seqType": "Sequelize.DATE"
                 }
             },
             "indexes": []
@@ -75,10 +65,11 @@
         "products": {
             "tableName": "products",
             "schema": {
-                "products_id": {
+                "id": {
                     "allowNull": false,
                     "primaryKey": true,
-                    "field": "products_id",
+                    "autoIncrement": true,
+                    "field": "id",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "name": {
@@ -120,16 +111,6 @@
                     "allowNull": true,
                     "field": "stock_quantity",
                     "seqType": "Sequelize.INTEGER"
-                },
-                "createdAt": {
-                    "allowNull": false,
-                    "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "updatedAt": {
-                    "allowNull": false,
-                    "field": "updatedAt",
-                    "seqType": "Sequelize.DATE"
                 }
             },
             "indexes": []
@@ -192,16 +173,6 @@
                     "allowNull": false,
                     "field": "store_active",
                     "seqType": "Sequelize.INTEGER"
-                },
-                "createdAt": {
-                    "allowNull": false,
-                    "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "updatedAt": {
-                    "allowNull": false,
-                    "field": "updatedAt",
-                    "seqType": "Sequelize.DATE"
                 }
             },
             "indexes": []
@@ -269,16 +240,6 @@
                     "allowNull": true,
                     "field": "admin_status",
                     "seqType": "Sequelize.INTEGER"
-                },
-                "createdAt": {
-                    "allowNull": false,
-                    "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "updatedAt": {
-                    "allowNull": false,
-                    "field": "updatedAt",
-                    "seqType": "Sequelize.DATE"
                 }
             },
             "indexes": []
@@ -291,20 +252,10 @@
                     "primaryKey": true,
                     "field": "wishlist_id",
                     "seqType": "Sequelize.INTEGER"
-                },
-                "createdAt": {
-                    "allowNull": false,
-                    "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "updatedAt": {
-                    "allowNull": false,
-                    "field": "updatedAt",
-                    "seqType": "Sequelize.DATE"
                 }
             },
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 3
 }

@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./App.css";
 
-import Nav from  "./Screens/Nav";
-import Home from "./Screens/Home";
-import About from "./Screens/About";
-import Shop from "./Screens/Shop";
+import Nav from  "./screens/Nav";
+import Home from "./screens/Home";
+import About from "./screens/About";
+import Shop from "./screens/Shop";
 
 import ItemDetail from "./components/Product/ItemDetail";
 import Products from "./components/Product/products";

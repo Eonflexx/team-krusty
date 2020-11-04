@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
 import '../../App.css';
 
@@ -16,7 +16,7 @@ function ItemDetail({ match }) {
     const fetchItem = async () => {
         const fetchItem = await fetch(`http://localhost:3001/products/${match.params.id}`);
         const item = await fetchItem.json();
-            setItem(item)
+        setItem(item)
         // response we get back
         console.log(item);
     };
@@ -24,6 +24,8 @@ function ItemDetail({ match }) {
     return (
         <div>
             <h1>{item.name}</h1>
+            <h4>${item.price}</h4>
+            <hr />
             <img src={item.image} alt="" />
         </div>
     );
