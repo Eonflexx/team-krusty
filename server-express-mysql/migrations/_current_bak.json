@@ -87,19 +87,19 @@
                     "field": "image",
                     "seqType": "Sequelize.STRING(255)"
                 },
-                "store_id": {
+                "storeid": {
                     "allowNull": true,
-                    "field": "store_id",
+                    "field": "storeid",
                     "seqType": "Sequelize.INTEGER"
                 },
-                "category_id": {
+                "category": {
                     "allowNull": true,
-                    "field": "category_id",
+                    "field": "category",
                     "seqType": "Sequelize.INTEGER"
                 },
-                "sub_category_id": {
+                "subcategoryid": {
                     "allowNull": true,
-                    "field": "sub_category_id",
+                    "field": "subcategoryid",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "description": {
@@ -107,9 +107,9 @@
                     "field": "description",
                     "seqType": "Sequelize.STRING(45)"
                 },
-                "stock_quantity": {
+                "stockquantity": {
                     "allowNull": true,
-                    "field": "stock_quantity",
+                    "field": "stockquantity",
                     "seqType": "Sequelize.INTEGER"
                 }
             },
@@ -257,5 +257,5 @@
             "indexes": []
         }
     },
-    "revision": 3
+    "revision": 4
 }

@@ -25,11 +25,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     category: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(45),
       allowNull: true
     },
     subcategoryid: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(45),
       allowNull: true
     },
     description: {

@@ -95,12 +95,12 @@
                 "category": {
                     "allowNull": true,
                     "field": "category",
-                    "seqType": "Sequelize.INTEGER"
+                    "seqType": "Sequelize.STRING(45)"
                 },
                 "subcategoryid": {
                     "allowNull": true,
                     "field": "subcategoryid",
-                    "seqType": "Sequelize.INTEGER"
+                    "seqType": "Sequelize.STRING(45)"
                 },
                 "description": {
                     "allowNull": true,
@@ -257,5 +257,5 @@
             "indexes": []
         }
     },
-    "revision": 4
+    "revision": 5
 }
