@@ -21,11 +21,7 @@ function Home() {
         <div>
             <h1>Home Page</h1>
             <hr />
-            <div className="home-links">
-                <li><Link to="/products">Add Products!</Link></li>
-                <li><Link to="/reviews">Review Products!</Link></li>
-                <li><Link to="/users">See Users!</Link></li>
-            </div>
+           
             <div>
                 <h4>{category1}</h4>
                 <Link to="/shop/23"><img src="/homepageimages/0001.jpg"></img></Link>
