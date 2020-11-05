@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../sc-logoadobe.svg';
 import { Link } from "react-router-dom"
 import '../App.css';
 
@@ -8,6 +9,7 @@ function Navy() {
     }
     return ( 
         <nav>
+            <img src={logo} className="App-logo" alt="logo" />
             <h3>SelectChoice</h3>
             <ul className="nav-links">
             <li><Link style={navStyle} to="/">Home</Link></li>
