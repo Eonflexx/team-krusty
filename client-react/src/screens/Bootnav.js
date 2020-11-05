@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../sc-logoadobe.svg';
 import { Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 function Bootnav() {

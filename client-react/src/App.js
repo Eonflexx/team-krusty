@@ -9,6 +9,7 @@ import Navy from "./screens/Navy";
 import Home from "./screens/Home";
 import About from "./screens/About";
 import Shop from "./screens/Shop";
+import Cart from "./screens/Cart";
 
 import ItemDetail from "./components/Product/ItemDetail";
 import Products from "./components/Product/products";
@@ -29,6 +30,7 @@ class App extends Component {
           <Route path="/about" component={About} />
           <Route exact path="/shop" component={Shop} />
           <Route path="/shop/:id" component={ItemDetail} />
+          <Route exact path="/cart" component={Cart} />
           <ProductReview path="/reviews" uri="http://localhost:3001/products" />
           <Products path="/products" uri="http://localhost:3001/products" />
           <PersonList path="/users" />

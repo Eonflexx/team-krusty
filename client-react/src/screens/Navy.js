@@ -1,3 +1,5 @@
+//This component is no longer in use.
+
 import React from 'react';
 import logo from '../sc-logoadobe.svg';
 import { Link } from "react-router-dom"

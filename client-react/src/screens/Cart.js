@@ -6,7 +6,7 @@ import "../App.css";
 function Cart({ match }) {
   return (
     <div>
-      <h1>About Page</h1>
+      <h1>Cart Page</h1>
       <hr />
       <h4>Brought to you from Team Krusty</h4>
       <div>
