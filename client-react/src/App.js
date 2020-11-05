@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./App.css";
 
-import Nav from  "./screens/Nav";
+import Bootnav from "./screens/Bootnav";
+import Navy from "./screens/Navy";
 import Home from "./screens/Home";
 import About from "./screens/About";
 import Shop from "./screens/Shop";
@@ -22,7 +23,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Nav />
+          <Bootnav />
           <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />

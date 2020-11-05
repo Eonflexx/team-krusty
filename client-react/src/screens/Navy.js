@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom"
 import '../App.css';
 
-function Nav() {
+function Navy() {
     const navStyle = {
         color: 'white'
     }
@@ -18,7 +18,7 @@ function Nav() {
     );
 }
 
-export default Nav;
+export default Navy;
 
 
 
