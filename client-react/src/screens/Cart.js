@@ -9,8 +9,8 @@ function Cart({ match }) {
       <h1>Cart Page</h1>
       <hr />
       <p><b>Checkout: </b>Customer Details</p>
-      <label>Name: </label><input></input><br />
-      <label>Address: </label><input></input><br />
+      <label>Name:</label> <input></input><br />
+      <label>Address:</label> <input></input><br />
       <label>Click button to accept charges: </label><button>Submit</button>
     </div>
   );
