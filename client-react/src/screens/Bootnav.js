@@ -14,12 +14,12 @@ function Bootnav() {
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/about">About</Nav.Link>
-                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                    <NavDropdown title="Features" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="/reviews">Reviews</NavDropdown.Item>
                         <NavDropdown.Item href="/products">Add Product</NavDropdown.Item>
                         <NavDropdown.Item href="/users">users</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.4">User Login</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Nav>
