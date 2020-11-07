@@ -22,9 +22,10 @@ function ItemDetail({ match }) {
     };
 
     return (
-        <div>
+        <div class="itemdetails">
             <h1>{item.name}</h1>
             <h4>${item.price}</h4>
+            <button>Add to Cart</button>
             <hr />
             <img src={item.image} alt="" />
         </div>
