@@ -11,7 +11,7 @@ function Cart({ match }) {
       <p><b>Checkout: </b>Customer Details</p>
       <label>Name:</label> <input></input><br />
       <label>Address:</label> <input></input><br />
-      <label>Click button to accept charges: </label><button>Submit</button>
+      <label>Click button to accept charges: </label><button>Checkout</button>
     </div>
   );
 }
