@@ -3,15 +3,12 @@ import { Link } from "react-router-dom"
 import { useAlert } from 'react-alert'
 import '../../App.css';
 
-
-
 const PAGE_PRODUCTS = 'products';
 const PAGE_CART = 'cart';
 
 
 function ItemDetailAndCart({ match }) {
     
-
     useEffect(() => {
         fetchItem();
         console.log(match)
@@ -26,7 +23,6 @@ function ItemDetailAndCart({ match }) {
     });
 
     const alert = useAlert();
-
 
     const addToCart = (product) => {
         setCart([...cart, product]);
@@ -72,12 +68,7 @@ function ItemDetailAndCart({ match }) {
                 </div>
             ))}
         </div>
-
         <button onClick={() => { alert.show("You've checkout! Thank you for purchasing on our website!") }}> Check Out </button>
-
-
-
-
         </div>
     );
 
