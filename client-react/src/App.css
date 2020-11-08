@@ -139,3 +139,9 @@ p {
   background-color: black;
   text-align: left;
 }
+
+#checkout {
+  color: gold;
+  background-color: black;
+  font-size: 42px;
+}

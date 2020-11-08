@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+import Checkout from './screens/Checkout';
+
 import "./App.css";
 
 import Bootnav from "./screens/Bootnav";
@@ -25,16 +27,19 @@ class App extends Component {
         <div>
           <Bootnav />
           <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route exact path="/shop" component={Shop} />
-          <Route path="/shop/:id" component={ItemDetailAndCart}/>
-          <ProductReview path="/reviews" uri="http://localhost:3001/products" />
-          <Products path="/products" uri="http://localhost:3001/products" />
-          <PersonList path="/users" />
-          <PersonInput />
-          <PersonUpdate />
-          <PersonDelete />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route exact path="/shop" component={Shop} />
+            <Route path="/shop/:id" component={ItemDetailAndCart} />
+
+            <ProductReview path="/reviews" uri="http://localhost:3001/products" />
+            <Products path="/products" uri="http://localhost:3001/products" />
+            <Route exact path="/checkout" component={Checkout} />
+            <PersonList path="/users" />
+            <PersonInput />
+            <PersonUpdate />
+            <PersonDelete />
+            
           </Switch>
         </div>
       </Router>
