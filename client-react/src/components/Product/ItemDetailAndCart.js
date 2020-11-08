@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
+import { useAlert } from 'react-alert'
 import '../../App.css';
 
 
@@ -23,6 +24,9 @@ function ItemDetailAndCart({ match }) {
     const [item, setItem] = useState({
         image: {}
     });
+
+    const alert = useAlert();
+
 
     const addToCart = (product) => {
         setCart([...cart, product]);
@@ -68,7 +72,12 @@ function ItemDetailAndCart({ match }) {
                 </div>
             ))}
         </div>
-        <button>Check Out!</button>
+
+        <button onClick={() => { alert.show("You've checkout! Thank you for purchasing on our website!") }}> Check Out </button>
+
+
+
+
         </div>
     );
 
