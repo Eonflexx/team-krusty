@@ -5,12 +5,12 @@ import "../App.css";
 
 function About({ match }) {
   return (
-    <div>
+    <div id='themeBlack' className="Topic-links">
       <h1>About Page</h1>
       <hr />
       <h4>Brought to you from Team Krusty</h4>
       <div>
-        <h2>Meet the Coders</h2>
+        <h2 className="Topic-links">Meet the Coders</h2>
         <ul className="Topic-links">
           <li><Link to={`${match.url}/Noble`}>Lead Back-End product Routing Implementer . . .</Link></li>
           <li><Link to={`${match.url}/Azzam`}>Lead CSS design and Bootstrap Implementer . . .</Link></li>
@@ -20,7 +20,7 @@ function About({ match }) {
         </ul>
 
         <Route path={`${match.url}/:topicId`} component={Topic} />
-        <Route exact path={match.url} render={() => <h3>Please select a link to see a team member!</h3>} />
+        <Route className="Topic-links" exact path={match.url} render={() => <h3 className="Topic-links">Please select a link to see a team member!</h3>} />
       </div>
     </div>
   );

@@ -19,10 +19,13 @@ function Home() {
 
     return (
         <div>
+            <header id='homeheader' >
             <h1>Welcome to Select Choice</h1>
+            <hr/>
+            </header>
             <hr />
            
-            <div>
+            <div id='photos'>
                 <h4>{category1}</h4>
                 <Link to="/shop/23"><img src="/homepageimages/0001.jpg" alt="croissant"></img></Link>
                 <Link to="/shop/24"><img src="/homepageimages/0002.jpg" alt="apple pie"></img></Link>

@@ -43,13 +43,17 @@ function ItemDetailAndCart({ match }) {
 
     const renderProduct = () => (
         <div className="itemdetails">
+            <header id='itemheader'>
             <h1>{item.name}</h1>
             <h4>${item.price}</h4>
+            </header>
+            <body>
             <button onClick = {() => addToCart (item)} >Add to Cart</button>
             <hr />
             <img src={item.image} alt="" />
             <hr />
             <button onClick = {() => navigateTo(PAGE_CART)} >Go to Cart ({cart.length})</button>   
+            </body>
         </div>
     );
 

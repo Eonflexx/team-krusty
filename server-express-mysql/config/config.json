@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Password1!",
+    "password": "Password1",
     "database": "krusty_one",
     "host": "localhost",
     "dialect": "mysql",

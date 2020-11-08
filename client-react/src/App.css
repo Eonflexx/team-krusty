@@ -60,7 +60,7 @@ nav{
 
 .App-logo {
   height: 50px;
-  width: 50px; 
+  width: 50px;  
 }
 
 h1 {
@@ -68,13 +68,33 @@ h1 {
   font-weight: bold;
 }
 
+#homeheader {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
+  background-color: black;
+}
+
+#itemheader {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: left;
+  background-color: black;
+  padding-left: 2rem;
+}
+
+div body {
+  padding-left: 2rem;
+}
+
 div {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 200;
+  color: #D4AF37;
 }
+
 img {
   justify-content: space-around;
-  
 }
 
 h2 {
@@ -104,3 +124,18 @@ p {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#photos{
+  padding-left: 2rem;
+  background-color: white;
+  color: black;
+}
+
+#themeBlack{
+  background-color: black;
+  color: #D4AF37;
+}
+
+#LeftBlack {
+  background-color: black;
+  text-align: left;
+}
