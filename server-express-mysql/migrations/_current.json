@@ -1,0 +1,261 @@
+{
+    "tables": {
+        "order": {
+            "tableName": "order",
+            "schema": {
+                "order_id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "order_id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "user_id": {
+                    "allowNull": false,
+                    "references": {
+                        "model": "user",
+                        "key": "user_id"
+                    },
+                    "unique": true,
+                    "field": "user_id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "order_status": {
+                    "allowNull": true,
+                    "field": "order_status",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "order_date": {
+                    "allowNull": true,
+                    "field": "order_date",
+                    "seqType": "Sequelize.DATEONLY"
+                },
+                "shipped_date": {
+                    "allowNull": true,
+                    "field": "shipped_date",
+                    "seqType": "Sequelize.DATEONLY"
+                },
+                "total_price": {
+                    "allowNull": true,
+                    "field": "total_price",
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "to_street": {
+                    "allowNull": true,
+                    "field": "to_street",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "to_city": {
+                    "allowNull": true,
+                    "field": "to_city",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "to_state": {
+                    "allowNull": true,
+                    "field": "to_state",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "to_country": {
+                    "allowNull": true,
+                    "field": "to_country",
+                    "seqType": "Sequelize.STRING(45)"
+                }
+            },
+            "indexes": []
+        },
+        "products": {
+            "tableName": "products",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "allowNull": true,
+                    "field": "name",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "price": {
+                    "allowNull": true,
+                    "field": "price",
+                    "seqType": "Sequelize.DECIMAL"
+                },
+                "image": {
+                    "allowNull": true,
+                    "field": "image",
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "storeid": {
+                    "allowNull": true,
+                    "field": "storeid",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "category": {
+                    "allowNull": true,
+                    "field": "category",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "subcategoryid": {
+                    "allowNull": true,
+                    "field": "subcategoryid",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "description": {
+                    "allowNull": true,
+                    "field": "description",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "stockquantity": {
+                    "allowNull": true,
+                    "field": "stockquantity",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "store": {
+            "tableName": "store",
+            "schema": {
+                "store_id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "store_id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "user_id": {
+                    "allowNull": false,
+                    "references": {
+                        "model": "user",
+                        "key": "user_id"
+                    },
+                    "unique": true,
+                    "field": "user_id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "store_name": {
+                    "allowNull": false,
+                    "field": "store_name",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "store_phone": {
+                    "allowNull": false,
+                    "field": "store_phone",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "store_email": {
+                    "allowNull": false,
+                    "field": "store_email",
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "store_street": {
+                    "allowNull": false,
+                    "field": "store_street",
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "store_state": {
+                    "allowNull": false,
+                    "field": "store_state",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "store_zip_code": {
+                    "allowNull": false,
+                    "field": "store_zip_code",
+                    "seqType": "Sequelize.CHAR(5)"
+                },
+                "store_image": {
+                    "allowNull": false,
+                    "field": "store_image",
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "store_active": {
+                    "allowNull": false,
+                    "field": "store_active",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "user": {
+            "tableName": "user",
+            "schema": {
+                "user_id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "user_id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "first_name": {
+                    "allowNull": false,
+                    "field": "first_name",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "last_name": {
+                    "allowNull": false,
+                    "field": "last_name",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "phone": {
+                    "allowNull": false,
+                    "field": "phone",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "email": {
+                    "allowNull": false,
+                    "field": "email",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "street": {
+                    "allowNull": false,
+                    "field": "street",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "state": {
+                    "allowNull": false,
+                    "field": "state",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "zip_code": {
+                    "allowNull": false,
+                    "field": "zip_code",
+                    "seqType": "Sequelize.CHAR(5)"
+                },
+                "country": {
+                    "allowNull": false,
+                    "field": "country",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "username": {
+                    "allowNull": false,
+                    "field": "username",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "password": {
+                    "allowNull": false,
+                    "field": "password",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "admin_status": {
+                    "allowNull": true,
+                    "field": "admin_status",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "wishlist": {
+            "tableName": "wishlist",
+            "schema": {
+                "wishlist_id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "wishlist_id",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 5
+}

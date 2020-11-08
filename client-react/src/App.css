@@ -1,0 +1,156 @@
+.App {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#MyInput {
+  width: 300px;
+  height: 60px;
+  margin: 10px;
+  font-size: 25px;
+}
+
+.MyCard {
+  width: 500px;
+  height: 170px;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+#updateInput {
+  width: 100px;
+  height: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(73,79,82);
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  color: white;
+}
+
+.Topic-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.App-logo {
+  height: 50px;
+  width: 50px;  
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+#homeheader {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
+  background-color: black;
+}
+
+#itemheader {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: left;
+  background-color: black;
+  padding-left: 2rem;
+}
+
+div body {
+  padding-left: 2rem;
+}
+
+div {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  color: #D4AF37;
+}
+
+img {
+  justify-content: space-around;
+}
+
+h2 {
+  padding: .5em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+li {
+  padding: .25em;
+}
+
+label {
+  padding: .25em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-weight: bold;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#photos{
+  padding-left: 2rem;
+  background-color: white;
+  color: black;
+}
+
+#themeBlack{
+  background-color: black;
+  color: #D4AF37;
+}
+
+#LeftBlack {
+  background-color: black;
+  text-align: left;
+}
+
+#checkout {
+  color: gold;
+  background-color: black;
+  font-size: 42px;
+}
+
+.footer{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  content: flex-right;
+  background-color: black;
+  
+}
