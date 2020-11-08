@@ -19,6 +19,7 @@ import PersonInput from "./components/Person/PersonInput";
 import PersonUpdate from "./components/Person/PersonUpdate";
 import PersonDelete from "./components/Person/PersonDelete";
 import ItemDetailAndCart from "./components/Product/ItemDetailAndCart";
+import Footer from "./components/Footer";
 
 class App extends Component {
   render() {
@@ -41,6 +42,7 @@ class App extends Component {
             <PersonDelete />
             
           </Switch>
+          <Footer />
         </div>
       </Router>
     );
